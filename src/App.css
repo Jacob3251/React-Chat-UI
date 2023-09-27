@@ -1,0 +1,14 @@
+/* styles.css (or any other CSS file you're using) */
+.scrollbar-style {
+  scrollbar-width: thin;
+  scrollbar-color: darkblue transparent;
+}
+
+.scrollbar-style::-webkit-scrollbar {
+  width: 15px;
+}
+
+.scrollbar-style::-webkit-scrollbar-thumb {
+  background-color: darkblue;
+  border-radius: 10px;
+}
