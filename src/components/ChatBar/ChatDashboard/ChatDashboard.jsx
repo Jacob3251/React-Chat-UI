@@ -3,9 +3,38 @@ import { DrawerContext } from "../../contexts/drawerContext";
 
 const ChatDashboard = () => {
   const [showAddAccountDiv, setShowAddAccountDiv] = useState(false);
-  const { handleSettingsToggler } = useContext(DrawerContext);
+  const { handleSettingsToggler, setSidebarContentType, setDisableChatBar } =
+    useContext(DrawerContext);
   const handleShowAddAccountDiv = () =>
     setShowAddAccountDiv(!showAddAccountDiv);
+  const handleSettingsNav = () => {
+    setSidebarContentType("settings");
+    setDisableChatBar(true);
+  };
+  const handleSavedMessagesNav = () => {
+    setSidebarContentType("saved_messages");
+    setDisableChatBar(true);
+  };
+  const handleCallsNav = () => {
+    setSidebarContentType("calls");
+    setDisableChatBar(true);
+  };
+  const handleContactsNav = () => {
+    setSidebarContentType("contacts");
+    setDisableChatBar(true);
+  };
+  const handleNewChannelNav = () => {
+    setSidebarContentType("new_channel");
+    setDisableChatBar(true);
+  };
+  const handleNewGroupNav = () => {
+    setSidebarContentType("new_group");
+    setDisableChatBar(true);
+  };
+  const handleAddAccountNav = () => {
+    setSidebarContentType("add_account");
+    setDisableChatBar(true);
+  };
   return (
     <div className=" min-h-screen flex flex-col bg-divide text-tColor space-y-[1px] md:space-y-0">
       {/* back button for small devices */}
@@ -33,8 +62,8 @@ const ChatDashboard = () => {
 
       {/* User Avatar below */}
       <div className="bg-hov px-5 ">
-        <div className="flex  justify-start md:justify-center  pt-5 pb-3 md:pt-10">
-          <div className="overflow-hidden h-[70px] md:h-[120px] w-[70px] md:w-[120px] rounded-full">
+        <div className="flex  justify-start md:justify-center  pt-5 pb-3 md:pt-5">
+          <div className="overflow-hidden h-[70px] md:h-[100px] w-[70px] md:w-[100px] rounded-full">
             <img
               src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww&w=1000&q=80"
               alt=""
@@ -42,7 +71,7 @@ const ChatDashboard = () => {
           </div>
         </div>
         {/* User Name below */}
-        <div className="font-bold md:text-center pb-5 flex justify-between md:justify-center">
+        <div className="font-bold md:text-center pb-2 flex justify-between md:justify-center">
           <div>
             <h3 className="text-[14px] md:text-[16px]">John Doe</h3>
             <h6 className="text-[12px] text-notification cursor-pointer">
@@ -90,7 +119,10 @@ const ChatDashboard = () => {
         </div>
       )}
       <div className="flex-1 bg-hov text-tColor">
-        <div className="md:flex bg-hov px-5 py-3 justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold hidden">
+        <div
+          onClick={handleAddAccountNav}
+          className="scale-90 md:flex bg-hov px-5 py-3 rounded-full  justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold hidden"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -109,7 +141,10 @@ const ChatDashboard = () => {
           <h3 className="text-tColor">Add Account</h3>
         </div>
 
-        <div className="flex bg-hov px-5 py-3 justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold">
+        <div
+          onClick={handleNewGroupNav}
+          className="scale-90 flex bg-hov px-5 py-3 rounded-full  justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -127,7 +162,10 @@ const ChatDashboard = () => {
 
           <h3 className="text-tColor">New Group</h3>
         </div>
-        <div className="flex bg-hov px-5 py-3 justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold">
+        <div
+          onClick={handleNewChannelNav}
+          className="scale-90 flex bg-hov px-5 py-3 rounded-full  justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -145,7 +183,10 @@ const ChatDashboard = () => {
 
           <h3 className="text-tColor">New Channel</h3>
         </div>
-        <div className="flex bg-hov px-5 py-3 justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold">
+        <div
+          onClick={handleContactsNav}
+          className="scale-90 flex bg-hov px-5 py-3 rounded-full  justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -163,7 +204,10 @@ const ChatDashboard = () => {
 
           <h3 className="text-tColor">Contacts</h3>
         </div>
-        <div className="flex bg-hov px-5 py-3 justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold">
+        <div
+          onClick={handleCallsNav}
+          className="scale-90 flex bg-hov px-5 py-3 rounded-full  justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -181,7 +225,10 @@ const ChatDashboard = () => {
 
           <h3 className="text-tColor">Calls</h3>
         </div>
-        <div className="flex bg-hov px-5 py-3 justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold">
+        <div
+          onClick={handleSavedMessagesNav}
+          className="scale-90 flex bg-hov px-5 py-3 rounded-full  justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -199,7 +246,10 @@ const ChatDashboard = () => {
 
           <h3 className="text-tColor">Saved Messages</h3>
         </div>
-        <div className="flex bg-hov px-5 py-3 justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold">
+        <div
+          onClick={handleSettingsNav}
+          className="scale-90 flex bg-hov px-5 py-3 rounded-full  justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -221,6 +271,24 @@ const ChatDashboard = () => {
           </svg>
 
           <h3 className="text-tColor">Settings</h3>
+        </div>
+        <div className="scale-90 flex bg-hov px-5 py-3 rounded-full  justify-start  space-x-2 text-notification hover:brightness-110 cursor-pointer font-bold">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+            />
+          </svg>
+
+          <h3 className="text-tColor">Logout</h3>
         </div>
       </div>
       <div className="bg-hov px-5 py-5  md:py-3 flex flex-col space-y-0 md:leading-3">

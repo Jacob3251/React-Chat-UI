@@ -1,14 +1,10 @@
-import ChatBar from "../ChatBar/ChatBar";
-import ChatWindow from "../ChatWindow/ChatWindow";
+import DrawerContents from "../DrawerContents/DrawerContents";
 import DrawerManager from "../contexts/drawerContext";
 
 const HomeLayout = () => {
   return (
     <DrawerManager>
-      <div className="bg-divide h-screen min-w-screen flex space-x-[2px] overflow-hidden">
-        <ChatBar></ChatBar>
-        <ChatWindow></ChatWindow>
-      </div>
+      <DrawerContents></DrawerContents>
     </DrawerManager>
   );
 };

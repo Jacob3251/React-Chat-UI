@@ -5,9 +5,13 @@ import { DrawerContext } from "../contexts/drawerContext";
 import ChatDashboard from "./ChatDashboard/ChatDashboard";
 
 const ChatBar = () => {
-  const { showSettings } = useContext(DrawerContext);
+  const { showSettings, disableChatBar } = useContext(DrawerContext);
   return (
-    <div className="bg-divide min-w-full md:min-w-[25%] max-h-screen flex flex-col relative">
+    <div
+      className={`bg-divide min-w-full md:min-w-[25%] max-h-screen flex flex-col relative ${
+        disableChatBar === true ? "hidden md:flex" : ""
+      }`}
+    >
       {showSettings === false && <ChatBarOption></ChatBarOption>}
       {showSettings === false && (
         <div className="flex-1 overflow-y-auto">

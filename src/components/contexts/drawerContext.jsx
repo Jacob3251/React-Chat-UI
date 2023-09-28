@@ -4,6 +4,8 @@ export const DrawerContext = createContext();
 
 const DrawerManager = ({ children }) => {
   const [showSettings, setShowSettings] = useState(false);
+  const [disableChatBar, setDisableChatBar] = useState(false);
+  const [sidebarContentType, setSidebarContentType] = useState("default");
   const handleSettingsToggler = () => {
     setShowSettings(!showSettings);
   };
@@ -11,6 +13,10 @@ const DrawerManager = ({ children }) => {
     showSettings,
     setShowSettings,
     handleSettingsToggler,
+    sidebarContentType,
+    setSidebarContentType,
+    disableChatBar,
+    setDisableChatBar,
   };
   return (
     <DrawerContext.Provider value={drawerValues}>
