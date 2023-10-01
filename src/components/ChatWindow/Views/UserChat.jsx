@@ -1,9 +1,8 @@
-import Scrollbars from "react-custom-scrollbars";
-import MessageOperator from "../../Shared/MessageOperator/MessageOperator";
-import MessageDiv from "../../Shared/MessageDiv/MessageDiv";
+import React, { useContext } from "react";
 import MessageContainer from "../../Shared/MessageContainer/MessageContainer";
+import { ChatContext } from "../../contexts/chatContext";
 
-const SavedMessages = () => {
+const UserChat = () => {
   const data = [
     {
       id: 1,
@@ -22,10 +21,7 @@ const SavedMessages = () => {
       timeStamp: "3rd Oct, 2023",
     },
   ];
-
-  return (
-    <MessageContainer type="Saved Messages" data={data}></MessageContainer>
-  );
+  return <MessageContainer type="UserChat" data={data}></MessageContainer>;
 };
 
-export default SavedMessages;
+export default UserChat;

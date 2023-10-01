@@ -8,6 +8,7 @@ import Contacts from "./Views/Contacts";
 import NewChannel from "./Views/NewChannel";
 import NewGroup from "./Views/NewGroup";
 import AddAccount from "./Views/AddAccount";
+import UserChat from "./Views/UserChat";
 // import Modal from "../Shared/Modal/Modal";
 
 const ChatWindow = () => {
@@ -16,6 +17,7 @@ const ChatWindow = () => {
   return (
     <>
       {sidebarContentType === "default" && <Default></Default>}
+      {sidebarContentType === "user_chat" && <UserChat></UserChat>}
       {sidebarContentType === "add_account" && <AddAccount></AddAccount>}
       {sidebarContentType === "new_group" && <NewGroup></NewGroup>}
       {sidebarContentType === "new_channel" && <NewChannel></NewChannel>}

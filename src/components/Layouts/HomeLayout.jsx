@@ -1,13 +1,14 @@
-import { Toaster } from "react-hot-toast";
 import DrawerContents from "../DrawerContents/DrawerContents";
 import DrawerManager from "../contexts/drawerContext";
+import ChatManager from "../contexts/chatContext";
 
 const HomeLayout = () => {
   return (
-    <DrawerManager>
-      <DrawerContents></DrawerContents>
-      <Toaster position="top-center" reverseOrder={false} />
-    </DrawerManager>
+    <ChatManager>
+      <DrawerManager>
+        <DrawerContents></DrawerContents>
+      </DrawerManager>
+    </ChatManager>
   );
 };
 
