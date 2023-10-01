@@ -26,12 +26,15 @@ const LoginLayout = () => {
     }
   };
   return (
-    <div className="bg-primary min-h-screen text-tColor flex justify-center items-center">
-      <div className="bg-hov p-5 rounded-lg">
+    <div className="bg-primary min-h-screen text-tColor flex flex-col justify-center items-center">
+      <h3 className="my-5 text-[24px]  font-bold md:font-normal md:text-[36px] font-redHat drop-shadow-md text-hov uppercase brightness-150">
+        React Chat UI Demo
+      </h3>
+      <div className="bg-hov p-5 rounded-lg w-[90%] md:w-[35%] ">
         <h2 className="text-center text-[18px] uppercase font-bold my-3">
           Sign in
         </h2>
-        <form className="flex flex-col" onSubmit={handleLoginValidation}>
+        <form className="flex flex-col w-full" onSubmit={handleLoginValidation}>
           <div className="relative">
             <label htmlFor="emailContainer" className="absolute top-3 left-2">
               <svg
@@ -55,7 +58,7 @@ const LoginLayout = () => {
               type="email"
               id="emailContainer"
               placeholder="Enter Email"
-              className="bg-primary mb-5 py-3 pl-10 rounded-lg outline-none"
+              className="bg-primary mb-5 py-3 pl-10 rounded-lg outline-none w-full"
             />
           </div>
           {/* <h6 className="mb-5 text-[12px] my-2 text-center">
@@ -87,13 +90,13 @@ const LoginLayout = () => {
               id="passwordContainer"
               type="password"
               placeholder="Enter Password"
-              className="bg-primary mb-5 py-3 pl-10 rounded-lg outline-none"
+              className="bg-primary mb-5 py-3 pl-10 rounded-lg outline-none w-full"
             />
           </div>
           <input
             type="submit"
             value="Submit"
-            className="bg-primary mb-5 py-3 pl-2 rounded-lg outline-none uppercase font-bold"
+            className="bg-primary hover:bg-notification duration-200 cursor-pointer mb-5 py-3 pl-2 rounded-lg outline-none uppercase font-bold"
           />
         </form>
       </div>
